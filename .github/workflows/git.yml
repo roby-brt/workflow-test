@@ -19,8 +19,11 @@ jobs:
         run: |
           echo "Full Commit Hash: $GITHUB_SHA"
 
-      # Step 3: Echo the short commit hash
       - name: Echo Short Commit Hash
-        run: GIT_COMMIT=$(echo "${GITHUB_SHA}" | cut -c1-7)
-          
-          
+        run: |
+          SHORT_COMMIT=$(echo "${GITHUB_SHA}" | cut -c1-7)
+          echo "Short Commit Hash: $SHORT_COMMIT"
+      - name: Echo Short SHA
+        run: |
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "Short sha: $SHORT_SHA"    
