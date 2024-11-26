@@ -16,7 +16,8 @@ jobs:
 
       # Step 2: Echo the full commit hash
       - name: Echo Full Commit Hash
-        run: echo "Full Commit Hash: $GITHUB_SHA"
+        run: |
+          echo "Full Commit Hash: $GITHUB_SHA"
 
       # Step 3: Echo the short commit hash
       - name: Echo Short Commit Hash
