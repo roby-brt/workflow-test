@@ -17,6 +17,11 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
-      - name: github commit  
+      # Step 2: Echo the full commit hash
+      - name: Echo Full Commit Hash
+        run: echo "Full Commit Hash: $GITHUB_SHA"
+
+      # Step 3: Echo the short commit hash
+      - name: Echo Short Commit Hash
         run: echo "Short Commit Hash: ${GITHUB_SHA::7}"
       
